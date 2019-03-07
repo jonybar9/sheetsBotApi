@@ -14,7 +14,7 @@ app.get('/', (req,res) => {
 })
 
 app.get('/hey', (req, res) => {
-    res.send('Hey oh alet"s go')
+    res.send('<div><h1>THE RAMONES RULE!</h1></div>')
 })
 
 const PORT = process.env.PORT || 4000;
