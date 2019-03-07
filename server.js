@@ -1,21 +1,25 @@
 const express = require('express')
-const fs = require('fs')
-const cors = require('cors')
-
+// const fs = require('fs')
+// const cors = require('cors')
+const bodyParser = require('body-parser')
 function writeChallenge(challenge) {
     console.log(challenge)
 }
 
 var app = express()
-app.use(cors({
-    origin: '*',
-    // credentials: true // enable set cookie
-}));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+// app.use(cors({
+//     origin: '*',
+//     // credentials: true // enable set cookie
+// }));
 
 
 app.post('/api', (req,res) => {
+
     var challengeEvent = req.body
-    writeChallenge(challengeEvent)
+    console.log(challengeEvent)
+    // writeChallenge(challengeEvent)
     let challenge = challengeEvent.challenge
     res.send(challenge)
 })
