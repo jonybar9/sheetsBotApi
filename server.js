@@ -1,16 +1,23 @@
 const express = require('express')
-// const cors = require('cors')
+const fs = require('fs')
+const cors = require('cors')
+
+function writeChallenge(challenge) {
+    console.log(challenge)
+}
 
 var app = express()
-// app.use(cors({
-//     origin: '*',
-//     // credentials: true // enable set cookie
-// }));
+app.use(cors({
+    origin: '*',
+    // credentials: true // enable set cookie
+}));
 
 
-app.get('/', (req,res) => {
-    console.log('got req')
-    res.send('THIS IS THE ROOT!!!')
+app.post('/api', (req,res) => {
+    var challengeEvent = req.body
+    writeChallenge(challengeEvent)
+    let challenge = challengeEvent.challenge
+    res.send(challenge)
 })
 
 app.get('/hey', (req, res) => {
