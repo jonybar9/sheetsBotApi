@@ -1,10 +1,6 @@
 const express = require('express')
-// const fs = require('fs')
 // const cors = require('cors')
 const bodyParser = require('body-parser')
-function writeChallenge(challenge) {
-    console.log(challenge)
-}
 
 var app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -16,12 +12,16 @@ app.use(bodyParser.json())
 
 
 app.post('/api', (req,res) => {
+    let payload = req.body;
+    res.sendStatus(200);
+    console.log('checking for it')
 
-    var challengeEvent = req.body
-    console.log(challengeEvent)
-    // writeChallenge(challengeEvent)
-    let challenge = challengeEvent.challenge
-    res.send(challenge)
+    if (payload.event.type === "app_mention") {
+        // if (payload.event.text.includes("tell me a joke")) {
+            // Make call to chat.postMessage using bot's token
+            console.log('yeahhh it was that')
+        // }
+    }
 })
 
 app.get('/hey', (req, res) => {
