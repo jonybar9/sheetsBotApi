@@ -10,11 +10,11 @@ var app = express()
 
 app.get('/', (req,res) => {
     console.log('got req')
-    res.send('THIS IS THE ROOT')
+    res.send('THIS IS THE ROOT!!!')
 })
 
 app.get('/hey', (req, res) => {
-    res.send('HEY HEY HELLO')
+    res.send('Alright Ok Alright Ok')
 })
 
 const PORT = process.env.PORT || 4000;
