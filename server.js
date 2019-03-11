@@ -15,6 +15,8 @@ app.get('/', function (req, res) {
 
 app.post('/sayHello', function (req, res) {
     var command = req.body.text
+    console.log(command === 'cleandDropbox')
+    console.log(command)
     if(command === 'cleandDropbox') {
         console.log('lalala')
     }
