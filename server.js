@@ -14,9 +14,10 @@ app.get('/', function (req, res) {
 });
 
 app.post('/sayHello', function (req, res) {
-    console.log('i am here')
-    console.log('got body', req.body)
-    console.log('got query', req.query)
+    var command = req.body.text
+    if(command === 'cleandDropbox') {
+        console.log('lalala')
+    }
     // var parsed_url = url.format({
     //     pathname: 'https://api.genius.com/search',
     //     query: {
