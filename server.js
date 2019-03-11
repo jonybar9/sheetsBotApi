@@ -11,17 +11,17 @@ app.use(bodyParser.json())
 // }));
 
 
-app.post('/api', (req,res) => {
+app.post('/api', (req, res) => {
     let payload = req.body;
-    res.sendStatus(200);
     console.log('checking for it')
-
+    console.log('check:', req.body)
     if (payload.event.type === "app_mention") {
         // if (payload.event.text.includes("tell me a joke")) {
-            // Make call to chat.postMessage using bot's token
-            console.log('yeahhh it was that')
+        // Make call to chat.postMessage using bot's token
+        console.log('yeahhh it was that')
         // }
     }
+    res.sendStatus(200);
 })
 
 app.get('/hey', (req, res) => {
