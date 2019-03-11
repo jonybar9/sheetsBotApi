@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
     res.send('It works!');
 });
 
-app.post('/api', function (req, res) {
+app.post('/sayHello', function (req, res) {
     console.log('i am here')
     console.log('got req', req)
     // var parsed_url = url.format({
